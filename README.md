@@ -1,1 +1,1 @@
-# whatdayistoday
+# whatdayistoday.info
