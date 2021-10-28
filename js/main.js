@@ -1,18 +1,42 @@
 /**
- * Get current day
- */
- const today = new Date()
- const getDay = today.getDay()
+* Get current day
+*/
+const today = new Date()
+const getDay = today.getDay()
 
- const day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',  'Thursday', 'Friday', 'Saturday']
- const day2 = ['Be', 'Monday', 'Tuesday', 'Wednesday',  'Thursday', 'Almost weekend', 'Saturday']
+const day = ['It\'s finally', 'It\'s F*****g', 'It\'s F*****g', 'It\'s F*****g',  'It\'s F*****g', 'Almost weekend!', 'It\'s finally']
+const day2 = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',  'Thursday', 'It\'s Friday', 'Saturday']
 
- // get day
- const _day = day[getDay]
- // get day
- const _day2 = day2[getDay]
+// get day & comment
+const _day = day[getDay]
+const _day2 = day2[getDay]
 
- const newDay = document.querySelector('.newDay')
- newDay.append(_day)
- const commentDay = document.querySelector('.commentDay')
- commentDay.append(_day2)
+const newDay = document.querySelector('.newDay')
+newDay.append(_day)
+const commentDay = document.querySelector('.commentDay')
+commentDay.append(_day2)
+document.querySelector(".year").innerHTML = today.getFullYear();
+
+/**
+* Circle text
+*/
+class Circle {
+    constructor(id) {
+        const el = document.getElementById(id);
+        const parent = el.parentElement;
+        parent.removeChild(el);
+        const chars = el.innerText.split("");
+        chars.push(" ");
+        for (let i = 0; i < chars.length; i++) {
+            const span = document.createElement("span");
+            span.innerText = chars[i];
+            span.className = `char${i + 1}`;
+            span.style.transform = `rotate(${i * 9.1}deg)`;
+            parent.appendChild(span);
+        }
+    }
+}
+function init() {
+    new Circle("circle-content");
+}
+init();
