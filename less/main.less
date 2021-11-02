@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6{font-family: 'Monument', sans-serif; text-transform: uppe
     &.year{font-family: 'Monument', sans-serif;}
   }
   .circle {animation: rotating 9.5s linear infinite; background-color: transparent; display: block; height: 1px; left: 50%; position: absolute; top: 50%; width: 1px;
-      span {bottom: 0; color: @color1; display: inline-block; font-family: 'NunitoSans', sans-serif; font-size: 0.8vmax; font-weight: bold; height: 5vmax; left: 0; position: absolute; transform-origin: bottom center;}
+      span {bottom: 0; color: @color1; display: inline-block; font-family: 'NunitoSans', sans-serif; font-size: 0.8vmax; font-weight: bold; height: 5vmax; left: 0; position: absolute; transform-origin: bottom center; opacity: 0.7;}
   }
 }
 @keyframes rotating {
@@ -45,18 +45,35 @@ h1, h2, h3, h4, h5, h6{font-family: 'Monument', sans-serif; text-transform: uppe
 }
 
 /*  ---  Bottom Bar  ---  */
-.bottom_bar--container{width: 100%; grid-area: footer;
-
+.bottom_bar--container{width: 100%; grid-area: footer; display: flex; justify-content: space-between; align-items: flex-end;
+  .social_menu--list{list-style-type: none; padding: 0; text-align: left;
+    li{display: inline-block; padding: 0 0.667rem;
+      &:first-child{padding-left: 0;}
+      a{text-decoration: none; color: @color1; opacity: 0.7;
+        &:hover{opacity: 1;}
+      }
+    }
+  }
+  .credits{color: @color1; opacity: 0.7;}
 }
 
 /*  ---  Grids  ---  */
-.grid--container{width: 100%; min-height: 100vh; position: absolute; left: 0; top: 0; z-index: 5;
+.grid--container{width: 100%; min-height: 100vh; position: absolute; left: 0; top: 0; z-index: 5; pointer-events: none;
   .line{position: absolute; background-color: #fff;
     &:nth-child(1){width: 1px; height: 100%; left: 33.333333%;}
     &:nth-child(2){width: 1px; height: 100%; left: 66.666666%;}
     &:nth-child(3){width: 100%; height: 1px; top: 33.333333%;}
     &:nth-child(4){width: 100%; height: 1px; top: 66.666666%;}
   }
+}
+
+/*  ---  cookies  ---  */
+#cookies{position: absolute; bottom: 2.222rem; left: 50%; transform: translateX(-50%); text-align: center; display: flex; align-items: center; color: #fff; background-color: @color1; padding: 1rem 1.667rem; transition: all 0.2s ease-out;
+  p{font-size:0.833rem; opacity: 0.5; margin: 0; margin-right: 0.833rem;}
+  a{text-decoration: none; color: #fff; font-size:0.833rem;
+    &:hover{text-decoration: underline;}
+  }
+  &.close-cookies{bottom: -2.222rem; opacity: 0;}
 }
 
 /*  ---  Noise  ---  */

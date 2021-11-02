@@ -57,7 +57,7 @@
 
 <body>
 
-  <a class="accessibility skip-to-main" href="#main">Skip to main content</a>
+  <a class="accessibility skip-to-main" href="#wrapper">Skip to main content</a>
 
   <div id="wrapper">
 
@@ -77,10 +77,19 @@
 
     <div class="bottom_bar--container">
       <div class="col">
+        <ul class="social_menu--list">
+          <li><a href="#" target="_blank">TW</a></li>
+          <li><a href="#" target="_blank">IG</a></li>
+        </ul>
       </div>
       <div class="col">
-        <p>Made with love by me © 2021</p>
+        <p class="credits">Made with love by me © 2021</p>
       </div>
+    </div>
+
+    <div id="cookies">
+      <p>This website use cookies</p>
+      <a href="#" id="close-cookies">Okay!</a>
     </div>
 
     <canvas id="noise" class="noise"></canvas>
@@ -94,6 +103,7 @@
 
   </div>
 
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js'></script>
   <script type='text/javascript' src='js/main.js'></script>
 
