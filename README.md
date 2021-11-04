@@ -2,7 +2,7 @@
 
 ## whatdayistoday.info
 
-The most useful tool in the internet of things.
+The most useful tool on the internet of things.
 
 ## (Anti)Social
 * [Twitter](https://twitter.com/_whatday_)
